@@ -29,20 +29,20 @@ public class Exercicios {
     public void exercicio2() {
         System.out.println("Informe o numero da sua matricula de 1 a 20");
         int matricula = sc.nextInt();
-        if(matricula <=5){
+        if (matricula <= 5) {
             System.out.println("Time do Chris");
 
-        }else if (matricula <=10) {
-            System.out.println("Time do Greg" );
-        
-        }else if (matricula <=15) {
-            System.out.println("Time do Caruso" );
+        } else if (matricula <= 10) {
+            System.out.println("Time do Greg");
 
-        }else if (matricula <=20) {
-            System.out.println("Time do Jerome" );
+        } else if (matricula <= 15) {
+            System.out.println("Time do Caruso");
 
-        }else System.out.println("Numero invalido" );    
-        
+        } else if (matricula <= 20) {
+            System.out.println("Time do Jerome");
+
+        } else
+            System.out.println("Numero invalido");
 
     }
 
@@ -53,16 +53,28 @@ public class Exercicios {
         double maca = sc.nextDouble();
         System.out.println("Informe a quantidade em kg de bananas:");
         double bananas = sc.nextDouble();
-        double precomorango = (morango*2.50);
-        double precomaca = (maca*1.80);
-        double precobanana = (bananas*1.30);
-        double precocompra = precobanana+precomaca+precomorango;
-        if(precocompra >=25 ){
-            System.out.println("Você ganhou 10% de desconto:"+(precocompra*0.1)+ precocompra);
-        }else 
-        System.out.println("Sua compra não recebeu desconto"+ precocompra);
+        double pesoTotal= bananas+maca+morango;
+        double precoTotal = bananas*1.3+maca*1.8+morango*2.5;
+        double desconto=0;
+        if(pesoTotal>=8 || precoTotal>=25){
+            desconto=0.1;
+        }
+        double precoFinal = precoTotal-precoTotal*desconto;
+        System.out.println("O preço da compra é R$ "+precoFinal);
 
-}
-}
-   
+    }
 
+    public void exercicio4() {
+        System.out.println("Infome o numero de matricula");
+        int nMatricula = sc.nextInt();
+        if(nMatricula%4==0){
+            System.out.println("Time Cris");
+        } else if (nMatricula%4==1){
+            System.out.println("Time Greg");
+        } else if (nMatricula%4==2){
+            System.err.println("Time Caruso");
+        }else{
+            System.out.println("Time Jemore");
+        }
+    }
+}
